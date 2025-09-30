@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-hide_page_in_sidebar: true
+unlisted: true
 ---
 
 # What is DataSanitizer?
