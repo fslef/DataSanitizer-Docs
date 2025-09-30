@@ -87,7 +87,8 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} FSLEF. Built with Docusaurus.`,
+      //copyright: `Copyright © ${new Date().getFullYear()} FSLEF. Built with Docusaurus.`,
+      copyright: `DataSanitizer © ${new Date().getFullYear()} FSLEF. <a href=\"/LICENSE\">MIT License</a>`,
     },
     prism: {
       theme: prismThemes.github,
