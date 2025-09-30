@@ -1,5 +1,5 @@
 ---
-id: intro
+Title: "Bienvenue"
 slug: /
 sidebar_position: 1
 ---
