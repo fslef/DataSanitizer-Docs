@@ -8,14 +8,13 @@ sidebar_position: 1
 
 DataSanitizer est un module PowerShell conçu pour détecter et supprimer les informations sensibles dans des fichiers et autres sources de données. Il vous aide à anonymiser, nettoyer ou valider des données afin de protéger la vie privée, respecter les réglementations et partager des informations en toute sécurité.
 
-:::information
-🚧 "En (très) enthousiaste construction" 🚧
+:::information[**État de progression**]
 
-Cette documentation est encore en train de se construire et de chercher sa forme finale. Certaines sections manquent, d'autres sont des coquilles qui font semblant d'être du vrai contenu, et quelques-unes patientent encore sur ma liste TODO
+Cette documentation est en cours d'élaboration. Certaines sections seront complétées et enrichies prochainement.
 
-Vous avez besoin de quelque chose qui n'est pas encore là ?
-- Demandez-le : ouvrez une issue ou démarrez une discussion.
-- Proposez-le : les demandes de fonctionnalités sont les bienvenues.
-- Construisez-le : une PR = karma instantané.
+Vous ne trouvez pas encore une information ?
+- Signalez le besoin : ouvrez une issue ou démarrez une discussion.
+- Proposez une amélioration : vos suggestions et demandes de fonctionnalités sont bienvenues.
+- Contribuez directement : soumettez une pull request.
 :::
 
