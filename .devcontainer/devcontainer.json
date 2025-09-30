@@ -1,0 +1,42 @@
+// // Basic dev container for Docusaurus docs development.
+// // Format: https://aka.ms/devcontainer.json
+// {
+//     "name": "DataSanitizer Docs",
+//     "image": "node:24", // Using an official Node image keeps things lightweight.
+//     "customizations": {
+//         "vscode": {
+//             "extensions": [
+//             ]
+//         }
+//     },
+//     "forwardPorts": [
+//         //3000
+//     ], // Default Docusaurus dev server port.
+//     "postCreateCommand": "npm install",
+//     "postStartCommand": "npm run start" // Auto-start the dev server on container start.
+// }
+{
+    "name": "docusaurus-template",
+    "image": "node:lts",
+    "mounts": [
+        {
+            "type": "volume",
+            "source": "devcontainer_docusaurus_template_node_modules",
+            "target": "${containerWorkspaceFolder}/node_modules"
+        }
+    ],
+    "appPort": [
+        "127.0.0.1:3001:3001"
+    ],
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder}/workspace,target=/workspace,type=bind,consistency=cached",
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "rvest.vs-code-prettier-eslint"
+            ]
+        }
+    }
+}
