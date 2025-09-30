@@ -18,7 +18,7 @@ const config: Config = {
   url: 'https://datasanitizer.fslef.net',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/DataSanitizer-Docs/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -41,7 +41,6 @@ const config: Config = {
       {
         docs: {
           routeBasePath: '/',
-          homePageId: 'intro',
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
