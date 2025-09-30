@@ -1,5 +1,5 @@
 ---
-Title: "Bienvenue"
+Title: Bienvenue
 slug: /
 sidebar_position: 1
 ---
