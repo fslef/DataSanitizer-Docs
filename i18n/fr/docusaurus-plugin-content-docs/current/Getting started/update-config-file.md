@@ -48,8 +48,8 @@ Les langues supportées sont `"en-US"` et `"fr-FR"`
 
 ### Paramètres de Chemin (Obligatoire)
 
-- **DataSanitizer.path.DSrootFolder** : Dossier racine pour les opérations DataSanitizer
-- **DataSanitizer.path.DSIncidentFolder** : Dossier d'incident contenant les données à anonymiser
+- **DataSanitizer.path.DSrootFolder** : Dossier racine pour les opérations DataSanitizer (contient `_Config` et les dossiers intermédiaires)
+- **DataSanitizer.path.DSIncidentFolder** : Dossier d'incident spécifique contenant les données à anonymiser (généralement dans un dossier d'organisation intermédiaire)
 
 :::warning
 Les deux paramètres de chemin sont obligatoires pour que l'anonymisation des données fonctionne.

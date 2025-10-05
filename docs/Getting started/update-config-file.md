@@ -48,8 +48,8 @@ Supported languages are `"en-US"` and `"fr-FR"`
 
 ### Path Settings (Required)
 
-- **DataSanitizer.path.DSrootFolder**: Root folder for DataSanitizer operations
-- **DataSanitizer.path.DSIncidentFolder**: Incident folder containing data to anonymize
+- **DataSanitizer.path.DSrootFolder**: Root folder for DataSanitizer operations (contains `_Config` and intermediate folders)
+- **DataSanitizer.path.DSIncidentFolder**: Specific incident folder containing data to anonymize (usually within an intermediate organization folder)
 
 :::warning
 Both path parameters are mandatory for data anonymization to work.
