@@ -25,8 +25,8 @@ Le fichier de configuration se nomme `DataSanitizer.cfg.json` et se trouve dans 
     "Static": {
         "PSFramework.Localization.Language": "fr-FR",
         "PSFramework.Localization.LoggingLanguage": "fr-FR",
-        "DataSanitizer.path.DSrootFolder": "C:\\DataSanitizer",
-        "DataSanitizer.path.DSIncidentFolder": "C:\\DataSanitizer\\Incident01"
+        "DataSanitizer.path.DSrootFolder": "C:\DataSanitizer",
+        "DataSanitizer.path.DSIncidentFolder": "C:\DataSanitizer\Incident01"
     }
 }
 ```
@@ -66,8 +66,8 @@ Les deux paramètres de chemin sont obligatoires pour que l'anonymisation des do
 {
     "Version": 1,
     "Static": {
-        "DataSanitizer.path.DSrootFolder": "C:\\DataSanitizer",
-        "DataSanitizer.path.DSIncidentFolder": "C:\\DataSanitizer\\Incident01"
+        "DataSanitizer.path.DSrootFolder": "C:\DataSanitizer",
+        "DataSanitizer.path.DSIncidentFolder": "C:\DataSanitizer\Incident01"
     }
 }
 ```
@@ -99,8 +99,8 @@ Les deux paramètres de chemin sont obligatoires pour que l'anonymisation des do
     "Static": {
         "PSFramework.Localization.Language": "fr-FR",
         "PSFramework.Localization.LoggingLanguage": "fr-FR",
-        "DataSanitizer.path.DSrootFolder": "C:\\DataSanitizer",
-        "DataSanitizer.path.DSIncidentFolder": "C:\\DataSanitizer\\Incident01"
+        "DataSanitizer.path.DSrootFolder": "C:\DataSanitizer",
+        "DataSanitizer.path.DSIncidentFolder": "C:\DataSanitizer\Incident01"
     }
 }
 ```
