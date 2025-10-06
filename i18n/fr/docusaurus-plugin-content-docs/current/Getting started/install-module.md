@@ -1,5 +1,10 @@
 ---
-title: Installer le module PowerShell DataSanitizer
+title: Installer le Module PowerShell DataSanitizer
+description: Comment installer (et mettre à jour) le module DataSanitizer dans votre profil utilisateur (sans droits admin) et dans des environnements hors ligne ou isolés.
+sidebar_label: Installer le Module
+sidebar_position: 2
+keywords: [DataSanitizer, PowerShell, installer, module, hors ligne, aperçu]
+---le: Installer le module PowerShell DataSanitizer
 description: Comment installer (et mettre à jour) le module DataSanitizer dans votre profil utilisateur (sans droits administrateur) et dans des environnements hors ligne ou isolés.
 sidebar_label: Installer le module
 sidebar_position: 1

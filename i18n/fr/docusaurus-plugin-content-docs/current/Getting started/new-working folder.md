@@ -2,7 +2,7 @@
 title: Initialiser un Nouveau Dossier de Travail
 description: Comment préparer un nouveau dossier de travail où la configuration DataSanitizer, les règles de détection et les journaux seront stockés pour les projets d'anonymisation de données.
 sidebar_label: Initialiser un Nouveau Dossier de Travail
-sidebar_position: 2
+sidebar_position: 3
 keywords: [DataSanitizer, PowerShell, Initialize-DsFolder, dossier, configuration, installation, répertoire de travail]
 ---
 
