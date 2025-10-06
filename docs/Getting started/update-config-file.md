@@ -122,3 +122,28 @@ Both path parameters are mandatory for data anonymization to work.
 
 </TabItem>
 </Tabs>
+
+## Loading the Configuration
+
+Once your configuration file is created and customized, you must load it into DataSanitizer using the `Import-DSConfig` command:
+
+<Tabs groupId="operating-systems">
+<TabItem value="windows" label="Windows" default>
+
+```powershell
+Import-DSConfig -ConfigFile "C:\DataSanitizer\_Config\DataSanitizer.cfg.json"
+```
+
+</TabItem>
+<TabItem value="linux-mac" label="Linux/Mac">
+
+```powershell
+Import-DSConfig -ConfigFile "/home/user/DataSanitizer/_Config/DataSanitizer.cfg.json"
+```
+
+</TabItem>
+</Tabs>
+
+:::tip
+Adjust the path to match your actual DataSanitizer working directory location. The configuration must be loaded before running any DataSanitizer analysis commands.
+:::

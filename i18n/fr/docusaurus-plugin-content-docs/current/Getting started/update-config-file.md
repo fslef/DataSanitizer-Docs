@@ -122,3 +122,28 @@ Les deux paramètres de chemin sont obligatoires pour que l'anonymisation des do
 
 </TabItem>
 </Tabs>
+
+## Charger la Configuration
+
+Une fois que votre fichier de configuration est créé et personnalisé, vous devez le charger dans DataSanitizer en utilisant la commande `Import-DSConfig` :
+
+<Tabs groupId="operating-systems">
+<TabItem value="windows" label="Windows" default>
+
+```powershell
+Import-DSConfig -ConfigFile "C:\DataSanitizer\_Config\DataSanitizer.cfg.json"
+```
+
+</TabItem>
+<TabItem value="linux-mac" label="Linux/Mac">
+
+```powershell
+Import-DSConfig -ConfigFile "/home/utilisateur/DataSanitizer/_Config/DataSanitizer.cfg.json"
+```
+
+</TabItem>
+</Tabs>
+
+:::tip
+Ajustez le chemin pour correspondre à l'emplacement réel de votre répertoire de travail DataSanitizer. La configuration doit être chargée avant d'exécuter toute commande d'analyse DataSanitizer.
+:::
