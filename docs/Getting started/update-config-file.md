@@ -48,11 +48,14 @@ Supported languages are `"en-US"` and `"fr-FR"`
 
 ### Path Settings (Required)
 
-- **DataSanitizer.path.DSrootFolder**: Root folder for DataSanitizer operations (contains `_Config` and intermediate folders)
-- **DataSanitizer.path.DSIncidentFolder**: Specific incident folder containing data to anonymize (usually within an intermediate organization folder)
+**DataSanitizer.path.DSrootFolder**: Root folder for DataSanitizer operations (contains `_Config` and organization folders), e.g. `C:\DataSanitizer`
+**DataSanitizer.path.DSLogInputFolder**: Folder containing input log files to be analyzed, e.g. `C:\DataSanitizer\Org\LogFolder\Input`
+**DataSanitizer.path.DSLogWorkingFolder**: Folder for working log files during processing, e.g. `C:\DataSanitizer\Org\LogFolder\Working`
+**DataSanitizer.Path.DSDetectionRulesFile**: Path to the detection rules configuration file, e.g. `C:\DataSanitizer\_Config\DetectionRules.cfg.json`
+**DataSanitizer.Path.DSFileInventory**: Path to the file inventory JSON, e.g. `C:\DataSanitizer\Org\LogFolder\FileInventory.json`
 
 :::warning
-Both path parameters are mandatory for data anonymization to work.
+All path parameters are mandatory for proper data anonymization and analysis.
 :::
 
 ## Examples
@@ -73,14 +76,19 @@ Both path parameters are mandatory for data anonymization to work.
 ```
 
 </TabItem>
-<TabItem value="linux-mac" label="Linux/Mac">
+<TabItem value="windows-full" label="Windows (full)">
 
 ```json
 {
     "Version": 1,
     "Static": {
-        "DataSanitizer.path.DSrootFolder": "/home/user/DataSanitizer",
-        "DataSanitizer.path.DSIncidentFolder": "/home/user/DataSanitizer/Incident01"
+        "PSFramework.Localization.Language": "fr-FR",
+        "PSFramework.Localization.LoggingLanguage": "fr-FR",
+        "DataSanitizer.path.DSrootFolder": "C:\\DataSanitizer",
+        "DataSanitizer.path.DSLogInputFolder": "C:\\DataSanitizer\\Org\\LogFolder\\Input",
+        "DataSanitizer.path.DSLogWorkingFolder": "C:\\DataSanitizer\\Org\\LogFolder\\Working",
+        "DataSanitizer.Path.DSDetectionRulesFile": "C:\\DataSanitizer\\_Config\\DetectionRules.cfg.json",
+        "DataSanitizer.Path.DSFileInventory": "C:\\DataSanitizer\\Org\\LogFolder\\FileInventory.json"
     }
 }
 ```
@@ -106,7 +114,7 @@ Both path parameters are mandatory for data anonymization to work.
 ```
 
 </TabItem>
-<TabItem value="linux-mac" label="Linux/Mac">
+<TabItem value="windows-full" label="Windows (full)">
 
 ```json
 {
@@ -114,8 +122,8 @@ Both path parameters are mandatory for data anonymization to work.
     "Static": {
         "PSFramework.Localization.Language": "en-US",
         "PSFramework.Localization.LoggingLanguage": "en-US",
-        "DataSanitizer.path.DSrootFolder": "/home/user/DataSanitizer",
-        "DataSanitizer.path.DSIncidentFolder": "/home/user/DataSanitizer/Incident01"
+        "DataSanitizer.path.DSrootFolder": "C:\\DataSanitizer",
+        "DataSanitizer.path.DSIncidentFolder": "C:\\DataSanitizer\\Incident01"
     }
 }
 ```
@@ -135,10 +143,10 @@ Import-DSConfig -ConfigFile "C:\DataSanitizer\_Config\DataSanitizer.cfg.json"
 ```
 
 </TabItem>
-<TabItem value="linux-mac" label="Linux/Mac">
+<TabItem value="windows-full" label="Windows (full)">
 
 ```powershell
-Import-DSConfig -ConfigFile "/home/user/DataSanitizer/_Config/DataSanitizer.cfg.json"
+Import-DSConfig -ConfigFile "C:\DataSanitizer\_Config\DataSanitizer.cfg.json"
 ```
 
 </TabItem>
