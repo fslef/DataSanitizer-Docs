@@ -45,45 +45,7 @@ Update-Module DataSanitizer -Scope CurrentUser
 </Tabs>
 
 
-## Offline Installation
-
-When the target machine has no Internet access:
-
-1. On a connected machine run (includes dependencies):
-	 ```powershell
-	 Save-Module -Name DataSanitizer -Path ./offline -AllowPrerelease -Force
-	 ```
-	 (Or download the `DataSanitizer.<version>.nupkg` from the GitHub releases and extract.)
-2. Transfer the `DataSanitizer` folder to the offline machine (USB, approved media, etc.).
-3. Copy into the user module path:
-
-<Tabs groupId="offline-simple">
-	<TabItem value="windows" label="Windows">
-
-```powershell
-$dest = Join-Path $env:USERPROFILE 'Documents/PowerShell/Modules'
-Copy-Item -Path ./DataSanitizer -Destination $dest -Recurse -Force
-```
-
-	</TabItem>
-	<TabItem value="unix" label="Linux / macOS">
-
-```powershell
-$dest = Join-Path $HOME '.local/share/powershell/Modules'
-Copy-Item -Path ./DataSanitizer -Destination $dest -Recurse -Force
-```
-
-	</TabItem>
-</Tabs>
-
-4. Import & verify:
-	 ```powershell
-	 Import-Module DataSanitizer -Force
-	 Get-Module DataSanitizer -ListAvailable | Select Name, Version, Path
-	 ```
-
-
-
+...existing code...
 
 ## Uninstall / Clean Up
 
