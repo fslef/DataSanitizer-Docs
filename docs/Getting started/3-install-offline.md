@@ -5,47 +5,32 @@ sidebar_label: Offline Install
 keywords: [DataSanitizer, PowerShell, offline, manual, install]
 ---
 
-# Offline Install
+# Offline Installation
 
 
-## 1. Preparation (on a connected computer)
+## Preparation (on a connected computer)
 
-1. Download the `.nupkg` file from GitHub releases.
-2. Copy the PowerShell script below into a file, for example `Install-DataSanitizer.ps1`.
-3. Transfer both the `.nupkg` file and the PowerShell script to the offline (disconnected) machine using USB, network share, etc.
+1. Download the .nupkg file from the GitHub releases.
+2. Transfer the .nupkg file to the offline machine (USB drive, network share, etc.).
 
-## 2. Installation (on the disconnected machine)
+## Installation (on the offline machine)
 
-1. Run this PowerShell script (update the first variable with your file path):
+1. Create a folder C:\DS-Install
+2. Copy the .nupkg file into this folder
+3. Rename the .nupkg file to .zip
+4. Extract the archive into the PowerShell module folder
+
+## Import du module
+
+Pour importer le module :
 
 ```powershell
-# Path to your .nupkg file
-$NuPkgPath = "C:\Path\To\DataSanitizer.0.3.0-feat.nupkg"
-
-# Find user module folder
-$DossierModule = Join-Path (@([Environment]::GetFolderPath('MyDocuments'), (Join-Path $HOME 'Documents')) | Where-Object { $_ -and (Test-Path $_) } | Select-Object -First 1) 'PowerShell\Modules'
-New-Item -ItemType Directory -Path $DossierModule -Force | Out-Null
-
-# Rename .nupkg to .zip and extract version
-$CheminZip = $NuPkgPath -replace '\.nupkg$', '.zip'
-Rename-Item $NuPkgPath $CheminZip -Force
-$NomBase = (Get-Item $CheminZip).BaseName
-$Version = ($NomBase -replace '^DataSanitizer\.', '').Split('-')[0]
-$Destination = "$DossierModule\DataSanitizer\$Version"
-
-# Remove old, extract new
-if (Test-Path $Destination) { Remove-Item $Destination -Recurse -Force }
-New-Item -ItemType Directory -Path $Destination -Force | Out-Null
-Expand-Archive -Path $CheminZip -DestinationPath $Destination -Force
-
-# Clean up NuGet files
-Remove-Item "$Destination\_rels" -Recurse -Force -ErrorAction SilentlyContinue
-Remove-Item "$Destination\[Content_Types].xml" -Force -ErrorAction SilentlyContinue
-Remove-Item "$Destination\DataSanitizer.nuspec" -Force -ErrorAction SilentlyContinue
-
-Write-Host "DataSanitizer version $Version installed in $Destination"
+Import-Module DataSanitizer
 ```
 
----
+Pour tester que le module est bien chagré
 
-Update `$NuPkgPath` with your file path before to run the script.
+```powershell
+Get-Command -Module DataSanitizer
+```
+
