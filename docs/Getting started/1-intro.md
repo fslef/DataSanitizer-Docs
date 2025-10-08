@@ -11,8 +11,8 @@ DataSanitizer is a PowerShell module that identifies and anonymizes sensitive da
 
 To get started, complete these steps in order:
 
-1. [Install the PowerShell Module](./2-install-online) - Install DataSanitizer from PowerShell Gallery or offline files
-2. [Initialize Your Working Folder](./4-new-working%20folder) - Create a structured directory for configuration, rules, and data files
-3. [Configure DataSanitizer](./5-update-config-file) - Set up paths and preferences, then load the configuration
+1. [Install the PowerShell Module](./2-install-online.md) - Install DataSanitizer from PowerShell Gallery or offline files
+2. [Initialize Your Working Folder](./4-new-working-folder.md) - Create a structured directory for configuration, rules, and data files
+3. [Configure DataSanitizer](./5-update-config-file.md) - Set up paths and preferences, then load the configuration
 
 After setup, you can place data files in your working folder and run DataSanitizer analysis commands.
