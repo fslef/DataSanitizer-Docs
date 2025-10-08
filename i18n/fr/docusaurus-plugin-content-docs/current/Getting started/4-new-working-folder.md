@@ -2,22 +2,7 @@
 title: Initialiser un nouveau répertoire de travail
 description: How to prepare a new working folder where DataSanitizer config, detection rules, and logs will be stored for data anonymization projects.
 sidebar_label: Nouveau répertoire de travail
-keywords: [DataSanitizer, PowerShell, Initialize-DsFolder, folder, configuration, setup, working directory]
----
-
-```powershell
-# Avec un dossier intermédiaire
-Initialize-DsFolder -RootFolder <CheminRépertoireRacine> -IntermediateFolderName <NomDossierIntermédiaire>
-
-# Sans dossier intermédiaire
-Initialize-DsFolder -RootFolder <CheminRépertoireRacine>
-```
-
-## Exempleser de travail
-description: Comment préparer un nouveau dossier de travail où seront stockés la configuration DataSanitizer, les règles de détection et les journaux pour les projets d'anonymisation de données.
-sidebar_label: Initialiser un nouveau dossier de travail
-sidebar_position: 4
-keywords: [DataSanitizer, PowerShell, Initialize-DsFolder, dossier, configuration, configuration, répertoire de travail]
+keywords: [DataSanitizer, PowerShell, New-DSFolder, folder, configuration, setup, working directory]
 ---
 
 import Tabs from '@theme/Tabs';
@@ -25,16 +10,21 @@ import TabItem from '@theme/TabItem';
 
 # Initialiser un nouveau dossier de travail
 
-Avant de pouvoir commencer à utiliser DataSanitizer pour analyser et assainir vos données, vous devez configurer un dossier de travail correctement structuré. La fonction `Initialize-DsFolder` crée tous les répertoires et fichiers de configuration nécessaires pour démarrer.
+Avant de pouvoir commencer à utiliser DataSanitizer pour analyser et assainir vos données, vous devez configurer un dossier de travail correctement structuré. La fonction `New-DSFolder` crée tous les répertoires et fichiers de configuration nécessaires pour démarrer.
 
 ## Vue d'ensemble
 
-La fonction `Initialize-DsFolder` configure un environnement de travail DataSanitizer complet avec :
+La fonction `New-DSFolder` configure un environnement de travail DataSanitizer complet avec :
 
 - **Dossier de configuration** (`_Config`) contenant les paramètres et les règles de détection
 - **Dossier intermédiaire** (optionnel) pour organiser les dossiers de journaux avec une classification supplémentaire
 - **Structure de dossier de journaux** pour stocker les résultats d'analyse
 - **Fichiers de configuration de base** avec les règles de détection par défaut
+
+:::danger[Le dossier racine doit exister]
+Pour des raisons de sécurité, le dossier racine doit exister.
+La commande `New-DSFolder` ajouteras les fichiers et dossiers nécessaire à l'execution de l'outil
+:::
 
 :::warning[Requis : Dossier vide]
 Vous **devez** utiliser un dossier vide lors de l'initialisation d'un nouveau projet DataSanitizer. La fonction échouera si le dossier cible contient des fichiers afin d'éviter les écrasements accidentels. Aucun fichier ne sera supprimé - l'opération s'arrête simplement.
@@ -44,10 +34,10 @@ Vous **devez** utiliser un dossier vide lors de l'initialisation d'un nouveau pr
 
 ```powershell
 # With an intermediate folder
-Initialize-DsFolder -RootFolder <RootDirectoryPath> -IntermediateFolderName <IntermediateFolderName>
+New-DSFolder -RootFolder <RootDirectoryPath> -IntermediateFolderName <IntermediateFolderName>
 
 # Without an intermediate folder
-Initialize-DsFolder -RootFolder <RootDirectoryPath>
+New-DSFolder -RootFolder <RootDirectoryPath>
 ```
 
 ## Examples
@@ -59,7 +49,7 @@ Initialize-DsFolder -RootFolder <RootDirectoryPath>
 # Créer et initialiser un nouveau projet DataSanitizer
 $projectPath = "C:\DataSanitizer\MonProjet"
 New-Item -Path $projectPath -ItemType Directory -Force
-Initialize-DsFolder -RootFolder $projectPath
+New-DSFolder -RootFolder $projectPath
 ```
 
 Cela crée :
@@ -81,7 +71,7 @@ C:\DataSanitizer\
 # Configuration avec dossier intermédiaire pour organiser les dossiers de journaux
 $projectPath = "C:\DataSanitizer\ProjetComplexe"
 New-Item -Path $projectPath -ItemType Directory -Force
-Initialize-DsFolder -RootFolder $projectPath -IntermediateFolderName "Staging"
+New-DSFolder -RootFolder $projectPath -IntermediateFolderName "Staging"
 ```
 
 Cela crée :
