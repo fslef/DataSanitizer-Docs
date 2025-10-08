@@ -7,21 +7,28 @@ keywords: [DataSanitizer, PowerShell, offline, manual, install]
 
 # Offline Install
 
+
+## 1. Preparation (on a connected computer)
+
 1. Download the `.nupkg` file from GitHub releases.
-2. Transfer it to the offline machine.
-3. Run this PowerShell script (update the first variable with your file path):
+2. Copy the PowerShell script below into a file, for example `Install-DataSanitizer.ps1`.
+3. Transfer both the `.nupkg` file and the PowerShell script to the offline (disconnected) machine using USB, network share, etc.
+
+## 2. Installation (on the disconnected machine)
+
+1. Run this PowerShell script (update the first variable with your file path):
 
 ```powershell
 # Path to your .nupkg file
-$CheminNuPkg = "C:\Path\To\DataSanitizer.0.3.0-feat.nupkg"
+$NuPkgPath = "C:\Path\To\DataSanitizer.0.3.0-feat.nupkg"
 
 # Find user module folder
 $DossierModule = Join-Path (@([Environment]::GetFolderPath('MyDocuments'), (Join-Path $HOME 'Documents')) | Where-Object { $_ -and (Test-Path $_) } | Select-Object -First 1) 'PowerShell\Modules'
 New-Item -ItemType Directory -Path $DossierModule -Force | Out-Null
 
 # Rename .nupkg to .zip and extract version
-$CheminZip = $CheminNuPkg -replace '\.nupkg$', '.zip'
-Rename-Item $CheminNuPkg $CheminZip -Force
+$CheminZip = $NuPkgPath -replace '\.nupkg$', '.zip'
+Rename-Item $NuPkgPath $CheminZip -Force
 $NomBase = (Get-Item $CheminZip).BaseName
 $Version = ($NomBase -replace '^DataSanitizer\.', '').Split('-')[0]
 $Destination = "$DossierModule\DataSanitizer\$Version"
@@ -40,4 +47,5 @@ Write-Host "DataSanitizer version $Version installed in $Destination"
 ```
 
 ---
-Just update `$CheminNuPkg` with your file path. That's it!
+
+Update `$NuPkgPath` with your file path before to run the script.
