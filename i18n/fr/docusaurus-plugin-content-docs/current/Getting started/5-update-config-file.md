@@ -36,6 +36,18 @@ Le fichier de configuration se nomme `DataSanitizer.cfg.json` et se trouve dans 
 
 Le paramètre `Version` est défini à `1` et est réservé pour les futures mises à jour du format de configuration.
 
+### Paramètres de chemin (Requis)
+
+- **DataSanitizer.path.DSrootFolder** : Dossier racine pour les opérations DataSanitizer (contient `_Config` et les dossiers d'organisation), par ex. `C:\DataSanitizer`
+- **DataSanitizer.path.DSLogInputFolder** : Dossier contenant les fichiers journaux d'entrée à analyser, par ex. `C:\DataSanitizer\Org\LogFolder\Input`
+- **DataSanitizer.path.DSLogWorkingFolder** : Dossier pour les fichiers journaux de travail pendant le traitement, par ex. `C:\DataSanitizer\Org\LogFolder\Working`
+- **DataSanitizer.Path.DSDetectionRulesFile** : Chemin vers le fichier de configuration des règles de détection, par ex. `C:\DataSanitizer\_Config\DetectionRules.cfg.json`
+- **DataSanitizer.Path.DSFileInventory** : Chemin vers l'inventaire des fichiers JSON, par ex. `C:\DataSanitizer\Org\LogFolder\FileInventory.json`
+
+:::warning
+Tous les paramètres de chemin sont obligatoires pour une anonymisation et une analyse de données appropriées.
+:::
+
 ### Paramètres de langue (Optionnel)
 
 Les langues sont automatiquement définies en fonction des paramètres régionaux du système d'exploitation si elles ne sont pas spécifiées, mais peuvent être forcées si nécessaire.
@@ -45,37 +57,9 @@ Les langues sont automatiquement définies en fonction des paramètres régionau
 
 Les langues prises en charge sont `"en-US"` et `"fr-FR"`
 
-### Paramètres de chemin (Requis)
-
-**DataSanitizer.path.DSrootFolder** : Dossier racine pour les opérations DataSanitizer (contient `_Config` et les dossiers d'organisation), par ex. `C:\DataSanitizer`
-**DataSanitizer.path.DSLogInputFolder** : Dossier contenant les fichiers journaux d'entrée à analyser, par ex. `C:\DataSanitizer\Org\LogFolder\Input`
-**DataSanitizer.path.DSLogWorkingFolder** : Dossier pour les fichiers journaux de travail pendant le traitement, par ex. `C:\DataSanitizer\Org\LogFolder\Working`
-**DataSanitizer.Path.DSDetectionRulesFile** : Chemin vers le fichier de configuration des règles de détection, par ex. `C:\DataSanitizer\_Config\DetectionRules.cfg.json`
-**DataSanitizer.Path.DSFileInventory** : Chemin vers l'inventaire des fichiers JSON, par ex. `C:\DataSanitizer\Org\LogFolder\FileInventory.json`
-
-:::warning
-Tous les paramètres de chemin sont obligatoires pour une anonymisation et une analyse de données appropriées.
-:::
-
 ## Exemples
 
 ### Configuration minimale
-
-<Tabs groupId="operating-systems">
-<TabItem value="windows" label="Windows" default>
-
-```json
-{
-    "Version": 1,
-    "Static": {
-        "DataSanitizer.path.DSrootFolder": "C:\DataSanitizer",
-        "DataSanitizer.path.DSIncidentFolder": "C:\DataSanitizer\Incident01"
-    }
-}
-```
-
-</TabItem>
-<TabItem value="windows-full" label="Windows (complet)">
 
 ```json
 {
@@ -92,28 +76,7 @@ Tous les paramètres de chemin sont obligatoires pour une anonymisation et une a
 }
 ```
 
-</TabItem>
-</Tabs>
-
 ### Avec paramètres de langue
-
-<Tabs groupId="operating-systems">
-<TabItem value="windows" label="Windows" default>
-
-```json
-{
-    "Version": 1,
-    "Static": {
-        "PSFramework.Localization.Language": "en-US",
-        "PSFramework.Localization.LoggingLanguage": "en-US",
-        "DataSanitizer.path.DSrootFolder": "C:\DataSanitizer",
-        "DataSanitizer.path.DSIncidentFolder": "C:\DataSanitizer\Incident01"
-    }
-}
-```
-
-</TabItem>
-<TabItem value="windows-full" label="Windows (complet)">
 
 ```json
 {
@@ -125,32 +88,18 @@ Tous les paramètres de chemin sont obligatoires pour une anonymisation et une a
         "DataSanitizer.path.DSIncidentFolder": "C:\\DataSanitizer\\Incident01"
     }
 }
-```
 
-</TabItem>
-</Tabs>
+```
 
 ## Chargement de la configuration
 
 Une fois que votre fichier de configuration est créé et personnalisé, vous devez le charger dans DataSanitizer en utilisant la commande `Import-DSConfig` :
 
-<Tabs groupId="operating-systems">
-<TabItem value="windows" label="Windows" default>
-
 ```powershell
 Import-DSConfig -ConfigFile "C:\DataSanitizer\_Config\DataSanitizer.cfg.json"
 ```
-
-</TabItem>
-<TabItem value="windows-full" label="Windows (complet)">
-
-```powershell
-Import-DSConfig -ConfigFile "C:\DataSanitizer\_Config\DataSanitizer.cfg.json"
-```
-
-</TabItem>
-</Tabs>
 
 :::tip
-Ajustez le chemin pour qu'il corresponde à l'emplacement réel de votre répertoire de travail DataSanitizer. La configuration doit être chargée avant d'exécuter toute commande d'analyse DataSanitizer.
+Ajustez le chemin pour qu'il corresponde à l'emplacement réel de votre répertoire de travail DataSanitizer.
+La configuration doit être chargée avant d'exécuter toute commande d'analyse DataSanitizer.
 :::
