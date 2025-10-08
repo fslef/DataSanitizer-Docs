@@ -1,24 +1,23 @@
 ---
-title: Configuration File
-description: Learn how to configure DataSanitizer with the JSON configuration file, including language settings and path parameters.
-sidebar_label: Configuration File
-sidebar_position: 4
-keywords: [configuration, config file, JSON, paths, language settings, DataSanitizer setup]
+title: Fichier de configuration
+description: Apprenez à configurer DataSanitizer avec le fichier de configuration JSON, y compris les paramètres de langue et les paramètres de chemin.
+sidebar_label: Fichier de configuration
+sidebar_position: 5
+keywords: [configuration, fichier config, JSON, chemins, paramètres de langue, configuration DataSanitizer]
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+# Fichier de configuration
 
-# Fichier de Configuration
+Le fichier de configuration de DataSanitizer est un fichier JSON contenant les paramètres essentiels du module.
 
-Le fichier de configuration DataSanitizer est un fichier JSON contenant les paramètres essentiels du module.
-
-## Emplacement du Fichier
+## Emplacement du fichier
 
 Le fichier de configuration se nomme `DataSanitizer.cfg.json` et se trouve dans le dossier `_Config` de votre répertoire de travail DataSanitizer.
 
-## Structure de Base
+## Structure de base
 
 ```json
 {
@@ -32,34 +31,32 @@ Le fichier de configuration se nomme `DataSanitizer.cfg.json` et se trouve dans 
 }
 ```
 
-
 ## Paramètres
 
 ### Version
 
-Le paramètre `Version` est défini à `1` et est réservé pour de futures évolutions du format de configuration.
+Le paramètre `Version` est défini à `1` et est réservé pour les futures mises à jour du format de configuration.
 
-### Paramètres de langue (optionnel)
+### Paramètres de langue (Optionnel)
 
-Les langues sont automatiquement définies selon la langue du système d'exploitation si non spécifiées, mais peuvent être forcées si besoin.
+Les langues sont automatiquement définies en fonction des paramètres régionaux du système d'exploitation si elles ne sont pas spécifiées, mais peuvent être forcées si nécessaire.
 
 - **PSFramework.Localization.Language** : Langue de l'interface console
-- **PSFramework.Localization.LoggingLanguage** : Langue des fichiers de log
+- **PSFramework.Localization.LoggingLanguage** : Langue des fichiers journaux
 
-Les langues supportées sont `"en-US"` et `"fr-FR"`
+Les langues prises en charge sont `"en-US"` et `"fr-FR"`
 
-### Paramètres de chemin (obligatoire)
+### Paramètres de chemin (Requis)
 
-**DataSanitizer.path.DSrootFolder** : Dossier racine pour les opérations DataSanitizer (contient `_Config` et les dossiers d'organisation), ex : `C:\DataSanitizer`
-**DataSanitizer.path.DSLogInputFolder** : Dossier contenant les fichiers journaux à analyser, ex : `C:\DataSanitizer\Org\LogFolder\Input`
-**DataSanitizer.path.DSLogWorkingFolder** : Dossier de travail pour les fichiers journaux en cours de traitement, ex : `C:\DataSanitizer\Org\LogFolder\Working`
-**DataSanitizer.Path.DSDetectionRulesFile** : Chemin vers le fichier de configuration des règles de détection, ex : `C:\DataSanitizer\_Config\DetectionRules.cfg.json`
-**DataSanitizer.Path.DSFileInventory** : Chemin vers le fichier d'inventaire des fichiers, ex : `C:\DataSanitizer\Org\LogFolder\FileInventory.json`
+**DataSanitizer.path.DSrootFolder** : Dossier racine pour les opérations DataSanitizer (contient `_Config` et les dossiers d'organisation), par ex. `C:\DataSanitizer`
+**DataSanitizer.path.DSLogInputFolder** : Dossier contenant les fichiers journaux d'entrée à analyser, par ex. `C:\DataSanitizer\Org\LogFolder\Input`
+**DataSanitizer.path.DSLogWorkingFolder** : Dossier pour les fichiers journaux de travail pendant le traitement, par ex. `C:\DataSanitizer\Org\LogFolder\Working`
+**DataSanitizer.Path.DSDetectionRulesFile** : Chemin vers le fichier de configuration des règles de détection, par ex. `C:\DataSanitizer\_Config\DetectionRules.cfg.json`
+**DataSanitizer.Path.DSFileInventory** : Chemin vers l'inventaire des fichiers JSON, par ex. `C:\DataSanitizer\Org\LogFolder\FileInventory.json`
 
 :::warning
-Tous les paramètres de chemin sont obligatoires pour garantir l'anonymisation et l'analyse des données.
+Tous les paramètres de chemin sont obligatoires pour une anonymisation et une analyse de données appropriées.
 :::
-
 
 ## Exemples
 
@@ -99,7 +96,6 @@ Tous les paramètres de chemin sont obligatoires pour garantir l'anonymisation e
 </TabItem>
 </Tabs>
 
-
 ### Avec paramètres de langue
 
 <Tabs groupId="operating-systems">
@@ -135,10 +131,9 @@ Tous les paramètres de chemin sont obligatoires pour garantir l'anonymisation e
 </TabItem>
 </Tabs>
 
+## Chargement de la configuration
 
-## Charger la configuration
-
-Une fois votre fichier de configuration créé et personnalisé, vous devez le charger dans DataSanitizer avec la commande `Import-DSConfig` :
+Une fois que votre fichier de configuration est créé et personnalisé, vous devez le charger dans DataSanitizer en utilisant la commande `Import-DSConfig` :
 
 <Tabs groupId="operating-systems">
 <TabItem value="windows" label="Windows" default>
@@ -158,5 +153,5 @@ Import-DSConfig -ConfigFile "C:\DataSanitizer\_Config\DataSanitizer.cfg.json"
 </Tabs>
 
 :::tip
-Adaptez le chemin à l'emplacement réel de votre répertoire de travail DataSanitizer. La configuration doit être chargée avant d'exécuter toute commande d'analyse DataSanitizer.
+Ajustez le chemin pour qu'il corresponde à l'emplacement réel de votre répertoire de travail DataSanitizer. La configuration doit être chargée avant d'exécuter toute commande d'analyse DataSanitizer.
 :::

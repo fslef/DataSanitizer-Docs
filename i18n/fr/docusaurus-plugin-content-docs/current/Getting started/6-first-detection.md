@@ -2,8 +2,8 @@
 title: Exécuter votre première détection
 description: Comment exécuter la détection de fichiers avec DataSanitizer en utilisant Start-DSFileDetection.
 sidebar_label: Première détection
-sidebar_position: 5
-keywords: [DataSanitizer, détection, Start-DSFileDetection, fichiers journaux, zip, dossier d'entrée]
+sidebar_position: 6
+keywords: [DataSanitizer, détection, Start-DSFileDetection, fichiers journaux, zip, dossier input]
 ---
 
 # Exécuter votre première détection
@@ -16,8 +16,8 @@ Pour démarrer une détection, utilisez la commande `Start-DSFileDetection`. Le 
 Start-DSFileDetection -InputPath "C:\DataSanitizer\Org\LogFolder\Input"
 ```
 
-- **InputPath** : Chemin vers le dossier contenant les fichiers ou archives ZIP à traiter. Si non spécifié, le dossier d'entrée configuré par défaut est utilisé.
-- Les fichiers ZIP sont automatiquement décompressés avant la détection.
+- **InputPath** : Chemin vers le dossier contenant les fichiers ou archives ZIP à traiter. S'il n'est pas spécifié, le dossier d'entrée configuré par défaut est utilisé.
+- Les fichiers ZIP sont automatiquement désarchivés avant la détection.
 - Les résultats et l'inventaire sont enregistrés dans les dossiers de travail et d'inventaire.
 
-C'est tout ! Vos fichiers seront analysés et les résultats de détection générés automatiquement.
+C'est tout ! Vos fichiers seront scannés et les résultats de détection générés automatiquement.
