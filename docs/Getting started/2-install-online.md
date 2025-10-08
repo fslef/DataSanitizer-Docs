@@ -3,7 +3,7 @@ title: Install the DataSanitizer PowerShell Module
 description: How to install (and update) the DataSanitizer module in your user profile (no admin rights) and in offline or isolated environments.
 sidebar_label: Install Module
 keywords: [DataSanitizer, PowerShell, install, module, offline, preview]
-hidden: true
+unlisted: true
 ---
 
 import Tabs from '@theme/Tabs';
