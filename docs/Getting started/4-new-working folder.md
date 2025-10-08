@@ -2,7 +2,6 @@
 title: Initialize a New Working Folder
 description: How to prepare a new working folder where DataSanitizer config, detection rules, and logs will be stored for data anonymization projects.
 sidebar_label: Initialize New Working Folder
-sidebar_position: 4
 keywords: [DataSanitizer, PowerShell, Initialize-DsFolder, folder, configuration, setup, working directory]
 ---
 

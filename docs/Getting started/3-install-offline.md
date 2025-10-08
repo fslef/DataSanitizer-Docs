@@ -1,11 +1,11 @@
-title: Offline Install (Manual)
+---
+title: Offline Install
 description: Quick steps for installing DataSanitizer offline using a downloaded package and PowerShell script.
 sidebar_label: Offline Install
-sidebar_position: 3
 keywords: [DataSanitizer, PowerShell, offline, manual, install]
+---
 
-
-# Offline Install (Manual)
+# Offline Install
 
 1. Download the `.nupkg` file from GitHub releases.
 2. Transfer it to the offline machine.

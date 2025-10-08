@@ -1,5 +1,9 @@
 ---
-title: Initialiser un no## Syntaxe
+title: Initialiser un nouveau répertoire de travail
+description: How to prepare a new working folder where DataSanitizer config, detection rules, and logs will be stored for data anonymization projects.
+sidebar_label: Nouveau répertoire de travail
+keywords: [DataSanitizer, PowerShell, Initialize-DsFolder, folder, configuration, setup, working directory]
+---
 
 ```powershell
 # Avec un dossier intermédiaire

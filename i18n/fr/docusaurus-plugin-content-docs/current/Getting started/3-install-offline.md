@@ -1,12 +1,11 @@
 ---
-title: Installation hors ligne (Manuelle)
+title: Installation hors ligne
 description: Étapes rapides pour installer DataSanitizer hors ligne en utilisant un package téléchargé et un script PowerShell.
 sidebar_label: Installation hors ligne
-sidebar_position: 3
 keywords: [DataSanitizer, PowerShell, hors ligne, manuel, installation]
 ---
 
-# Installation hors ligne (Manuelle)
+# Installation hors ligne
 
 1. Téléchargez le fichier `.nupkg` depuis les releases GitHub.
 2. Transférez-le vers la machine hors ligne.

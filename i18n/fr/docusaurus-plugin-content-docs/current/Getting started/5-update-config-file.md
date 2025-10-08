@@ -2,7 +2,6 @@
 title: Fichier de configuration
 description: Apprenez à configurer DataSanitizer avec le fichier de configuration JSON, y compris les paramètres de langue et les paramètres de chemin.
 sidebar_label: Fichier de configuration
-sidebar_position: 5
 keywords: [configuration, fichier config, JSON, chemins, paramètres de langue, configuration DataSanitizer]
 ---
 

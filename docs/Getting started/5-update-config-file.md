@@ -2,7 +2,6 @@
 title: Configuration File
 description: Learn how to configure DataSanitizer with the JSON configuration file, including language settings and path parameters.
 sidebar_label: Configuration File
-sidebar_position: 5
 keywords: [configuration, config file, JSON, paths, language settings, DataSanitizer setup]
 ---
 

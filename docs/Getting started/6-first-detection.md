@@ -2,7 +2,6 @@
 title: Run Your First Detection
 description: How to run file detection with DataSanitizer using Start-DSFileDetection.
 sidebar_label: First Detection
-sidebar_position: 6
 keywords: [DataSanitizer, detection, Start-DSFileDetection, log files, zip, input folder]
 ---
 
